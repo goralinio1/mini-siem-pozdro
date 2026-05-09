@@ -17,3 +17,7 @@ def receive_log():
         return jsonify({"error": "invalid payload"}), 400
     logs.append(data)
     return jsonify({"status": "ok"}), 200
+
+@app.get("/logs")
+def get_logs():
+    return jsonify(logs)
