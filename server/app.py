@@ -1,7 +1,17 @@
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-logs = []
+LOG_FILE = "logs.jsonl"
+
+def append_jsonl(path, data):
+    import json
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(data) + "\n")
+
+def read_jsonl(path):
+    import json, os
+    if not os.path.exists(path): return []
+    with open(path, encoding="utf-8") as f: return [json.loads(line) for line in f if line.strip()]
 
 @app.get("/")
 def health():
@@ -15,9 +25,11 @@ def receive_log():
     data = request.get_json(silent=True)
     if not data:
         return jsonify({"error": "invalid payload"}), 400
-    logs.append(data)
+    from datetime import datetime
+    data["received_at"] = datetime.now().isoformat()
+    append_jsonl(LOG_FILE, data)
     return jsonify({"status": "ok"}), 200
 
 @app.get("/logs")
 def get_logs():
-    return jsonify(logs)
+    return jsonify(read_jsonl(LOG_FILE))
