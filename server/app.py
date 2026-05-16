@@ -33,3 +33,5 @@ def receive_log():
 @app.get("/logs")
 def get_logs():
     return jsonify(read_jsonl(LOG_FILE))
+
+ALERT_FILE = "alerts.jsonl"
