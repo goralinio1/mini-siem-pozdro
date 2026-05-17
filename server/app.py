@@ -40,4 +40,8 @@ def check_alerts(data):
     alerts = []
     if (data.get("cpu") or 0) > 80:
         alerts.append({"host": data.get("host", "unknown"), "type": "HIGH_CPU", "value": data.get("cpu"), "threshold": 80})
+    if (data.get("ram") or 0) > 80:
+        alerts.append({"host": data.get("host", "unknown"), "type": "HIGH_RAM", "value": data.get("ram"), "threshold": 80})
+    if (data.get("disk") or 0) > 90:
+        alerts.append({"host": data.get("host", "unknown"), "type": "HIGH_DISK", "value": data.get("disk"), "threshold": 90})
     return alerts
