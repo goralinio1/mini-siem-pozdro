@@ -35,3 +35,9 @@ def get_logs():
     return jsonify(read_jsonl(LOG_FILE))
 
 ALERT_FILE = "alerts.jsonl"
+
+def check_alerts(data):
+    alerts = []
+    if (data.get("cpu") or 0) > 80:
+        alerts.append({"host": data.get("host", "unknown"), "type": "HIGH_CPU", "value": data.get("cpu"), "threshold": 80})
+    return alerts
