@@ -45,3 +45,7 @@ def check_alerts(data):
     if (data.get("disk") or 0) > 90:
         alerts.append({"host": data.get("host", "unknown"), "type": "HIGH_DISK", "value": data.get("disk"), "threshold": 90})
     return alerts
+
+@app.get("/alerts")
+def get_alerts_endpoint():
+    return jsonify(read_jsonl(ALERT_FILE))
