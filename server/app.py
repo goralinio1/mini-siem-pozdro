@@ -67,3 +67,7 @@ def get_latest_status():
         data["seconds_since_last_seen"] = round(seconds, 2)
         data["state"] = "ACTIVE" if seconds <= HOST_TIMEOUT_SECONDS else "INACTIVE"
     return latest
+
+@app.get("/status")
+def status_endpoint():
+    return jsonify(get_latest_status())
