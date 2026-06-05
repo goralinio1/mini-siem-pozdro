@@ -49,3 +49,21 @@ def check_alerts(data):
 @app.get("/alerts")
 def get_alerts_endpoint():
     return jsonify(read_jsonl(ALERT_FILE))
+
+HOST_TIMEOUT_SECONDS = 30
+
+def get_latest_status():
+    from datetime import datetime
+    latest = {}
+    for log in read_jsonl(LOG_FILE):
+        latest[log.get("host", "unknown")] = log
+    now = datetime.now()
+    for host, data in latest.items():
+        ts = data.get("received_at")
+        if not ts:
+            data["state"] = "UNKNOWN"
+            continue
+        seconds = (now - datetime.fromisoformat(ts)).total_seconds()
+        data["seconds_since_last_seen"] = round(seconds, 2)
+        data["state"] = "ACTIVE" if seconds <= HOST_TIMEOUT_SECONDS else "INACTIVE"
+    return latest
