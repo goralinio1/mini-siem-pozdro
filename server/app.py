@@ -71,3 +71,8 @@ def get_latest_status():
 @app.get("/status")
 def status_endpoint():
     return jsonify(get_latest_status())
+
+@app.get("/summary")
+def summary_endpoint():
+    status = get_latest_status()
+    return jsonify({"total_logs": len(read_jsonl(LOG_FILE)), "total_alerts": len(read_jsonl(ALERT_FILE)), "total_hosts": len(status), "active_hosts": sum(1 for x in status.values() if x.get("state") == "ACTIVE"), "inactive_hosts": sum(1 for x in status.values() if x.get("state") == "INACTIVE")})
