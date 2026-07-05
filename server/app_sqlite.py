@@ -23,3 +23,11 @@ def receive_log():
 
 def save_alert(alert):
     conn=db(); conn.execute("INSERT INTO alerts(host,type,message,value,threshold,created_at) VALUES(?,?,?,?,?,?)", (alert["host"],alert["type"],alert.get("message"),alert.get("value"),alert.get("threshold"),datetime.now().isoformat())); conn.commit(); conn.close()
+
+def rows(sql):
+    conn=db(); result=[dict(r) for r in conn.execute(sql).fetchall()]; conn.close(); return result
+
+@app.get("/logs")
+def logs_endpoint(): return jsonify(rows("SELECT * FROM logs ORDER BY id ASC"))
+@app.get("/alerts")
+def alerts_endpoint(): return jsonify(rows("SELECT * FROM alerts ORDER BY id ASC"))
