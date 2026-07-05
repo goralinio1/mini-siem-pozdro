@@ -20,3 +20,6 @@ def receive_log():
     data["received_at"]=datetime.now().isoformat()
     save_log(data)
     return jsonify({"status":"ok"})
+
+def save_alert(alert):
+    conn=db(); conn.execute("INSERT INTO alerts(host,type,message,value,threshold,created_at) VALUES(?,?,?,?,?,?)", (alert["host"],alert["type"],alert.get("message"),alert.get("value"),alert.get("threshold"),datetime.now().isoformat())); conn.commit(); conn.close()
