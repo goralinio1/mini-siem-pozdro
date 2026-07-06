@@ -31,3 +31,18 @@ def rows(sql):
 def logs_endpoint(): return jsonify(rows("SELECT * FROM logs ORDER BY id ASC"))
 @app.get("/alerts")
 def alerts_endpoint(): return jsonify(rows("SELECT * FROM alerts ORDER BY id ASC"))
+
+def latest_status():
+    result={}
+    for row in rows("SELECT * FROM logs ORDER BY id ASC"): result[row["host"]]=row
+    now=datetime.now()
+    for data in result.values():
+        sec=(now-datetime.fromisoformat(data["received_at"])).total_seconds(); data["seconds_since_last_seen"]=round(sec,2); data["state"]="ACTIVE" if sec<=HOST_TIMEOUT_SECONDS else "INACTIVE"
+    return result
+@app.get("/status")
+def status_endpoint(): return jsonify(latest_status())
+@app.get("/summary")
+def summary_endpoint():
+    s=latest_status(); return jsonify({"total_logs":len(rows("SELECT * FROM logs")),"total_alerts":len(rows("SELECT * FROM alerts")),"total_hosts":len(s),"active_hosts":sum(1 for x in s.values() if x["state"]=="ACTIVE"),"inactive_hosts":sum(1 for x in s.values() if x["state"]=="INACTIVE")})
+
+if __name__ == "__main__": app.run(host="0.0.0.0", port=5000)
