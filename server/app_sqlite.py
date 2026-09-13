@@ -3,7 +3,7 @@ from datetime import datetime
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-DB_PATH = "mini_siem.db"
+DB_PATH = "/var/lib/mini-siem/mini_siem.db"
 HOST_TIMEOUT_SECONDS = 30
 
 def db():
