@@ -1,0 +1,6 @@
+-- CPU
+SELECT received_at, cpu FROM logs WHERE host='mini-siem-client1' ORDER BY id DESC LIMIT 100;
+-- RAM
+SELECT received_at, ram FROM logs WHERE host='mini-siem-client1' ORDER BY id DESC LIMIT 100;
+-- DISK
+SELECT received_at, disk FROM logs WHERE host='mini-siem-client1' ORDER BY id DESC LIMIT 100;
