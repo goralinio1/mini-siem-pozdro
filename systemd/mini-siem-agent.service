@@ -1,0 +1,10 @@
+[Unit]
+Description=mini-SIEM agent
+After=network-online.target
+[Service]
+User=siem
+WorkingDirectory=/home/siem/mini-siem-agent
+ExecStart=/home/siem/mini-siem-agent/venv/bin/python agent.py
+Restart=always
+[Install]
+WantedBy=multi-user.target
