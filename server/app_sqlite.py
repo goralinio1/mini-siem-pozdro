@@ -5,6 +5,8 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 DB_PATH = "/var/lib/mini-siem/mini_siem.db"
 HOST_TIMEOUT_SECONDS = 30
+ALERT_COOLDOWN_SECONDS = 60
+_last_alert = {}
 
 def db():
     conn = sqlite3.connect(DB_PATH)
