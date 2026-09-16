@@ -1,0 +1,4 @@
+import os
+SERVER_URL=os.getenv("MINI_SIEM_SERVER_URL","http://192.168.26.130:5000/log")
+SEND_INTERVAL=float(os.getenv("MINI_SIEM_SEND_INTERVAL","5"))
+REQUEST_TIMEOUT=float(os.getenv("MINI_SIEM_REQUEST_TIMEOUT","5"))
