@@ -2,6 +2,7 @@ import sqlite3
 from datetime import datetime
 from flask import Flask, jsonify, request
 from config import (DB_PATH, HOST_TIMEOUT_SECONDS, ALERT_COOLDOWN_SECONDS, CPU_THRESHOLD, RAM_THRESHOLD, DISK_THRESHOLD)
+from cooldown import should_emit
 
 app = Flask(__name__)
 _last_alert = {}
@@ -34,7 +35,9 @@ def receive_log():
     if not valid: return jsonify({"status":"error","message":error}),400
     data["received_at"]=datetime.now().isoformat(); save_log(data)
     alerts = check_alerts(data)
-    for alert in alerts: save_alert(alert)
+    for alert in alerts:
+        if should_emit(_last_alert, alert["host"], alert["type"], ALERT_COOLDOWN_SECONDS):
+            save_alert(alert)
     return jsonify({"status":"ok", "alerts_generated":len(alerts)})
 
 @app.get("/logs")
