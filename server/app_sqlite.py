@@ -53,3 +53,11 @@ def status_endpoint(): return jsonify(latest_status())
 def summary_endpoint():
     s=latest_status(); return jsonify({"total_logs":len(rows("SELECT * FROM logs")),"total_alerts":len(rows("SELECT * FROM alerts")),"total_hosts":len(s),"active_hosts":sum(1 for x in s.values() if x["state"]=="ACTIVE"),"inactive_hosts":sum(1 for x in s.values() if x["state"]=="INACTIVE"),"unknown_hosts":0})
 if __name__ == "__main__": app.run(host="0.0.0.0",port=5000)
+
+# Alert rules are evaluated centrally after a valid telemetry sample is stored.
+def build_alert(host, alert_type, value, threshold):
+    return {"host":host,"type":alert_type,"message":f"{alert_type}: {value}% > {threshold}%","value":float(value),"threshold":float(threshold),"created_at":datetime.now().isoformat()}
+
+def check_alerts(data):
+    rules=(("HIGH_CPU","cpu",CPU_THRESHOLD),("HIGH_RAM","ram",RAM_THRESHOLD),("HIGH_DISK","disk",DISK_THRESHOLD))
+    return [build_alert(data["host"],kind,data[field],threshold) for kind,field,threshold in rules if float(data[field]) > threshold]
