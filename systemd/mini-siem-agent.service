@@ -1,10 +1,17 @@
 [Unit]
-Description=mini-SIEM agent
+Description=mini-SIEM monitoring agent
 After=network-online.target
+Wants=network-online.target
+
 [Service]
+Type=simple
 User=siem
 WorkingDirectory=/home/siem/mini-siem-agent
+Environment=MINI_SIEM_SERVER_URL=http://192.168.26.130:5000/log
 ExecStart=/home/siem/mini-siem-agent/venv/bin/python agent.py
 Restart=always
+RestartSec=5
+NoNewPrivileges=true
+
 [Install]
 WantedBy=multi-user.target
