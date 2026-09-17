@@ -1,10 +1,18 @@
 [Unit]
 Description=mini-SIEM Flask backend
 After=network-online.target
+Wants=network-online.target
+
 [Service]
+Type=simple
 User=siem
 WorkingDirectory=/home/siem/mini-siem/server
+Environment=MINI_SIEM_DB_PATH=/var/lib/mini-siem/mini_siem.db
 ExecStart=/home/siem/mini-siem/venv/bin/python app_sqlite.py
-Restart=always
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
 [Install]
 WantedBy=multi-user.target
