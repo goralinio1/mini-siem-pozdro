@@ -1,43 +1,198 @@
-2026-05-09|Damian Szczepiński|SIEM-1 Przygotowanie struktury projektu i środowiska
-2026-05-09|Damian Szczepiński|SIEM-2 Konfiguracja serwera Ubuntu i sieci
-2026-05-09|Julia Wasilewska|SIEM-3 Podstawowy backend Flask
-2026-05-09|Julia Wasilewska|SIEM-4 Endpoint POST /log
-2026-05-09|Jakub Góral|SIEM-5 Test POST /log i GET /logs
-2026-05-10|Damian Szczepiński|SIEM-6 Utworzenie agenta Linux
-2026-05-10|Damian Szczepiński|SIEM-7 Zbieranie CPU przez psutil
-2026-05-10|Damian Szczepiński|SIEM-8 Dodanie RAM i dysku
-2026-05-10|Damian Szczepiński|SIEM-9 Wysyłanie telemetrii HTTP JSON
-2026-05-11|Jakub Góral|SIEM-10 Test komunikacji agent-serwer
-2026-05-16|Julia Wasilewska|SIEM-11 Trwały zapis logs.jsonl
-2026-05-16|Julia Wasilewska|SIEM-12 Zapis alerts.jsonl
-2026-05-17|Julia Wasilewska|SIEM-13 Reguła HIGH_CPU
-2026-05-17|Julia Wasilewska|SIEM-14 Reguły HIGH_RAM i HIGH_DISK
-2026-05-17|Jakub Góral|SIEM-15 Test progów alertowych
-2026-05-18|Julia Wasilewska|SIEM-16 Endpoint GET /alerts
-2026-06-05|Damian Szczepiński|SIEM-17 Mechanizm ACTIVE/INACTIVE
-2026-06-05|Damian Szczepiński|SIEM-18 HOST_TIMEOUT_SECONDS = 30
-2026-06-05|Damian Szczepiński|SIEM-19 Endpoint GET /status
-2026-06-05|Jakub Góral|SIEM-20 Test ACTIVE -> INACTIVE -> ACTIVE
-2026-06-06|Damian Szczepiński|SIEM-21 Endpoint GET /summary
-2026-06-06|Jakub Góral|SIEM-22 Walidacja /summary i liczników
-2026-07-04|Damian Szczepiński|SIEM-23 Projekt schematu SQLite
-2026-07-04|Damian Szczepiński|SIEM-24 Migracja logów do SQLite
-2026-07-05|Damian Szczepiński|SIEM-25 Migracja alertów do SQLite
-2026-07-05|Damian Szczepiński|SIEM-26 Odczyt logs i alerts z SQLite
-2026-07-06|Jakub Góral|SIEM-27 Test API po migracji SQLite
-2026-07-06|Damian Szczepiński|SIEM-28 Status i summary na SQLite
-2026-09-12|Julia Wasilewska|SIEM-29 Instalacja i konfiguracja Grafany
-2026-09-12|Julia Wasilewska|SIEM-30 Integracja SQLite z Grafaną
-2026-09-13|Julia Wasilewska|SIEM-31 Przeniesienie bazy do /var/lib/mini-siem
-2026-09-13|Julia Wasilewska|SIEM-32 Dashboard CPU RAM Disk
-2026-09-14|Julia Wasilewska|SIEM-33 Panele alertów i statusu hosta
-2026-09-14|Damian Szczepiński|SIEM-34 Usługa systemd backendu
-2026-09-14|Damian Szczepiński|SIEM-35 Usługa systemd agenta
-2026-09-15|Jakub Góral|SIEM-36 Test autostartu usług
-2026-09-15|Damian Szczepiński|SIEM-37 Cooldown alertów 60 s
-2026-09-15|Jakub Góral|SIEM-38 Test stress-ng i deduplikacji
-2026-09-16|Julia Wasilewska|SIEM-39 Zapytania SQL dla dashboardu
-2026-09-16|Jakub Góral|SIEM-40 Test restartu obu VM
-2026-09-16|Damian Szczepiński|SIEM-41 Backup i procedura odtworzenia
-2026-09-17|Jakub Góral|SIEM-42 Końcowa walidacja MVP i dokumentacja testów
-2026-09-17|Jakub Góral|SIEM-42 Dodanie ewidencji czasu i mapowania tasków
+1ef5fa0|2026-05-09|Damian Szczepiński|SIEM-1 Przygotowanie struktury projektu i środowiska|Time spent: 2h
+Task: SIEM-1
+
+af77d33|2026-05-09|Damian Szczepiński|SIEM-2 Konfiguracja serwera Ubuntu i sieci|Time spent: 2.5h
+Task: SIEM-2
+
+4276ff0|2026-05-09|Julia Wasilewska|SIEM-3 Podstawowy backend Flask|Time spent: 3h
+Task: SIEM-3
+
+6565def|2026-05-09|Julia Wasilewska|SIEM-4 Endpoint POST /log|Time spent: 2.5h
+Task: SIEM-4
+
+df0366b|2026-05-09|Jakub Góral|SIEM-5 Test POST /log i GET /logs|Time spent: 2h
+Task: SIEM-5
+
+c56a45f|2026-05-10|Damian Szczepiński|SIEM-6 Utworzenie agenta Linux|Time spent: 3.5h
+Task: SIEM-6
+
+6ef1b85|2026-05-10|Damian Szczepiński|SIEM-7 Zbieranie CPU przez psutil|Time spent: 2.5h
+Task: SIEM-7
+
+a01c053|2026-05-10|Damian Szczepiński|SIEM-8 Dodanie RAM i dysku|Time spent: 2.5h
+Task: SIEM-8
+
+9ede3fe|2026-05-10|Damian Szczepiński|SIEM-9 Wysyłanie telemetrii HTTP JSON|Time spent: 3h
+Task: SIEM-9
+
+c66bf7a|2026-05-11|Jakub Góral|SIEM-10 Test komunikacji agent-serwer|Time spent: 2.5h
+Task: SIEM-10
+
+fb2e78c|2026-05-16|Julia Wasilewska|SIEM-11 Trwały zapis logs.jsonl|Time spent: 3.5h
+Task: SIEM-11
+
+f75d47a|2026-05-16|Julia Wasilewska|SIEM-12 Zapis alerts.jsonl|Time spent: 3h
+Task: SIEM-12
+
+5300966|2026-05-17|Julia Wasilewska|SIEM-13 Reguła HIGH_CPU|Time spent: 3h
+Task: SIEM-13
+
+6116704|2026-05-17|Julia Wasilewska|SIEM-14 Reguły HIGH_RAM i HIGH_DISK|Time spent: 2.5h
+Task: SIEM-14
+
+61e85df|2026-05-17|Jakub Góral|SIEM-15 Test progów alertowych|Time spent: 2.5h
+Task: SIEM-15
+
+bac960a|2026-05-18|Julia Wasilewska|SIEM-16 Endpoint GET /alerts|Time spent: 2h
+Task: SIEM-16
+
+d7b46c2|2026-06-05|Damian Szczepiński|SIEM-17 Mechanizm ACTIVE/INACTIVE|Time spent: 4h
+Task: SIEM-17
+
+71ef7c1|2026-06-05|Damian Szczepiński|SIEM-18 HOST_TIMEOUT_SECONDS = 30|Time spent: 2.5h
+Task: SIEM-18
+
+e76b618|2026-06-05|Damian Szczepiński|SIEM-19 Endpoint GET /status|Time spent: 3h
+Task: SIEM-19
+
+c31c8e7|2026-06-05|Jakub Góral|SIEM-20 Test ACTIVE -> INACTIVE -> ACTIVE|Time spent: 2.5h
+Task: SIEM-20
+
+82b3e6c|2026-06-06|Damian Szczepiński|SIEM-21 Endpoint GET /summary|Time spent: 3.5h
+Task: SIEM-21
+
+ba8d078|2026-06-06|Jakub Góral|SIEM-22 Walidacja /summary i liczników|Time spent: 2h
+Task: SIEM-22
+
+d30900a|2026-07-04|Damian Szczepiński|SIEM-23 Projekt schematu SQLite|Time spent: 3h
+Task: SIEM-23
+
+3f7d17b|2026-07-04|Damian Szczepiński|SIEM-24 Migracja logów do SQLite|Time spent: 4.5h
+Task: SIEM-24
+
+23ff8da|2026-07-05|Damian Szczepiński|SIEM-25 Migracja alertów do SQLite|Time spent: 4h
+Task: SIEM-25
+
+e714c51|2026-07-05|Damian Szczepiński|SIEM-26 Odczyt logs i alerts z SQLite|Time spent: 3h
+Task: SIEM-26
+
+a7af3b2|2026-07-06|Jakub Góral|SIEM-27 Test API po migracji SQLite|Time spent: 3h
+Task: SIEM-27
+
+9cd6ff4|2026-07-06|Damian Szczepiński|SIEM-28 Status i summary na SQLite|Time spent: 3.5h
+Task: SIEM-28
+
+b07b81b|2026-09-12|Julia Wasilewska|SIEM-29 Instalacja i konfiguracja Grafany|Time spent: 3.5h
+Task: SIEM-29
+
+b1fa9bb|2026-09-12|Julia Wasilewska|SIEM-30 Integracja SQLite z Grafaną|Time spent: 4h
+Task: SIEM-30
+
+02cbdad|2026-09-13|Julia Wasilewska|SIEM-31 Przeniesienie bazy do /var/lib/mini-siem|Time spent: 3.5h
+Task: SIEM-31
+
+d933ff8|2026-09-13|Julia Wasilewska|SIEM-32 Dashboard CPU RAM Disk|Time spent: 5h
+Task: SIEM-32
+
+94f376f|2026-09-14|Julia Wasilewska|SIEM-33 Panele alertów i statusu hosta|Time spent: 4h
+Task: SIEM-33
+
+e219801|2026-09-14|Damian Szczepiński|SIEM-34 Usługa systemd backendu|Time spent: 3.5h
+Task: SIEM-34
+
+ce3526c|2026-09-14|Damian Szczepiński|SIEM-35 Usługa systemd agenta|Time spent: 3h
+Task: SIEM-35
+
+4cf1d68|2026-09-15|Jakub Góral|SIEM-36 Test autostartu usług|Time spent: 2.5h
+Task: SIEM-36
+
+7f6d67c|2026-09-15|Damian Szczepiński|SIEM-37 Cooldown alertów 60 s|Time spent: 4h
+Task: SIEM-37
+
+7c6b1f1|2026-09-15|Jakub Góral|SIEM-38 Test stress-ng i deduplikacji|Time spent: 3h
+Task: SIEM-38
+
+4ec4bd7|2026-09-16|Julia Wasilewska|SIEM-39 Zapytania SQL dla dashboardu|Time spent: 3h
+Task: SIEM-39
+
+b7092ef|2026-09-16|Jakub Góral|SIEM-40 Test restartu obu VM|Time spent: 3h
+Task: SIEM-40
+
+c5bc1ab|2026-09-16|Damian Szczepiński|SIEM-41 Backup i procedura odtworzenia|Time spent: 3.5h
+Task: SIEM-41
+
+9cd9824|2026-09-17|Jakub Góral|SIEM-42 Końcowa walidacja MVP i dokumentacja testów|Time spent: 4h
+Task: SIEM-42
+
+f2edabc|2026-09-17|Jakub Góral|SIEM-42 Dodanie ewidencji czasu i mapowania tasków|Time spent: 0h
+Task: SIEM-42
+
+288b901|2026-09-17|Damian Szczepiński|SIEM-43 Dodanie konfiguracji backendu przez zmienne środowiskowe|Time spent: 2.0h
+Task: SIEM-43
+
+3fafa71|2026-09-17|Damian Szczepiński|SIEM-44 Podłączenie wspólnej konfiguracji do backendu|Time spent: 1.5h
+Task: SIEM-44
+
+ab5e905|2026-09-17|Julia Wasilewska|SIEM-45 Walidacja wymaganych pól telemetrii|Time spent: 2.0h
+Task: SIEM-45
+
+695473d|2026-09-17|Julia Wasilewska|SIEM-46 Implementacja wspólnej funkcji generowania alertów|Time spent: 3.0h
+Task: SIEM-46
+
+38744db|2026-09-17|Julia Wasilewska|SIEM-47 Podłączenie reguł alertowych do POST /log|Time spent: 1.5h
+Task: SIEM-47
+
+b52e382|2026-09-17|Damian Szczepiński|SIEM-48 Dodanie cooldownu per host i typ alertu|Time spent: 3.0h
+Task: SIEM-48
+
+9b8e2fa|2026-09-17|Damian Szczepiński|SIEM-49 Integracja cooldownu z zapisem alertów|Time spent: 1.5h
+Task: SIEM-49
+
+198138c|2026-09-17|Jakub Góral|SIEM-50 Test walidacji niepoprawnego payloadu|Time spent: 1.5h
+Task: SIEM-50
+
+7525de1|2026-09-17|Jakub Góral|SIEM-51 Test jednostkowy mechanizmu cooldown|Time spent: 1.5h
+Task: SIEM-51
+
+23eed4c|2026-09-17|Damian Szczepiński|SIEM-52 Konfiguracja adresu API i interwału agenta|Time spent: 1.5h
+Task: SIEM-52
+
+538bf77|2026-09-17|Damian Szczepiński|SIEM-53 Refaktoryzacja pętli wysyłającej agenta|Time spent: 2.0h
+Task: SIEM-53
+
+cbfc2f7|2026-09-17|Jakub Góral|SIEM-54 Test struktury danych collect_metrics|Time spent: 1.0h
+Task: SIEM-54
+
+3d58182|2026-09-17|Julia Wasilewska|SIEM-55 Dodanie indeksów SQLite dla hosta i czasu|Time spent: 1.5h
+Task: SIEM-55
+
+399ecee|2026-09-17|Julia Wasilewska|SIEM-56 Optymalizacja statusu hostów zapytaniem SQL|Time spent: 2.5h
+Task: SIEM-56
+
+a20f7e1|2026-09-17|Julia Wasilewska|SIEM-57 Rozszerzenie zapytań Grafany o zakres czasu|Time spent: 2.0h
+Task: SIEM-57
+
+1b57ec4|2026-09-17|Damian Szczepiński|SIEM-58 Utwardzenie jednostki systemd backendu|Time spent: 2.0h
+Task: SIEM-58
+
+0d003c7|2026-09-17|Damian Szczepiński|SIEM-59 Uzupełnienie jednostki systemd agenta|Time spent: 1.5h
+Task: SIEM-59
+
+550b866|2026-09-17|Jakub Góral|SIEM-60 Checklista testu ACTIVE INACTIVE ACTIVE|Time spent: 1.5h
+Task: SIEM-60
+
+07ef34b|2026-09-17|Damian Szczepiński|SIEM-61 Skrypt inicjalizacji bazy danych|Time spent: 1.5h
+Task: SIEM-61
+
+8edfd27|2026-09-17|Julia Wasilewska|SIEM-62 Opis siedmiu paneli dashboardu|Time spent: 1.5h
+Task: SIEM-62
+
+82f0af8|2026-09-17|Damian Szczepiński|SIEM-63 Procedura wdrożenia końcowej wersji|Time spent: 2.0h
+Task: SIEM-63
+
+73bdcf4|2026-09-17|Jakub Góral|SIEM-64 Końcowa checklista testów end to end|Time spent: 2.0h
+Task: SIEM-64
+
+12d692c|2026-09-17|Damian Szczepiński|SIEM-65 Aktualizacja README i mapy komponentów|Time spent: 2.0h
+Task: SIEM-65
+
