@@ -1,0 +1,43 @@
+2026-05-09|Damian Szczepiński|SIEM-1 Przygotowanie struktury projektu i środowiska
+2026-05-09|Damian Szczepiński|SIEM-2 Konfiguracja serwera Ubuntu i sieci
+2026-05-09|Julia Wasilewska|SIEM-3 Podstawowy backend Flask
+2026-05-09|Julia Wasilewska|SIEM-4 Endpoint POST /log
+2026-05-09|Jakub Góral|SIEM-5 Test POST /log i GET /logs
+2026-05-10|Damian Szczepiński|SIEM-6 Utworzenie agenta Linux
+2026-05-10|Damian Szczepiński|SIEM-7 Zbieranie CPU przez psutil
+2026-05-10|Damian Szczepiński|SIEM-8 Dodanie RAM i dysku
+2026-05-10|Damian Szczepiński|SIEM-9 Wysyłanie telemetrii HTTP JSON
+2026-05-11|Jakub Góral|SIEM-10 Test komunikacji agent-serwer
+2026-05-16|Julia Wasilewska|SIEM-11 Trwały zapis logs.jsonl
+2026-05-16|Julia Wasilewska|SIEM-12 Zapis alerts.jsonl
+2026-05-17|Julia Wasilewska|SIEM-13 Reguła HIGH_CPU
+2026-05-17|Julia Wasilewska|SIEM-14 Reguły HIGH_RAM i HIGH_DISK
+2026-05-17|Jakub Góral|SIEM-15 Test progów alertowych
+2026-05-18|Julia Wasilewska|SIEM-16 Endpoint GET /alerts
+2026-06-05|Damian Szczepiński|SIEM-17 Mechanizm ACTIVE/INACTIVE
+2026-06-05|Damian Szczepiński|SIEM-18 HOST_TIMEOUT_SECONDS = 30
+2026-06-05|Damian Szczepiński|SIEM-19 Endpoint GET /status
+2026-06-05|Jakub Góral|SIEM-20 Test ACTIVE -> INACTIVE -> ACTIVE
+2026-06-06|Damian Szczepiński|SIEM-21 Endpoint GET /summary
+2026-06-06|Jakub Góral|SIEM-22 Walidacja /summary i liczników
+2026-07-04|Damian Szczepiński|SIEM-23 Projekt schematu SQLite
+2026-07-04|Damian Szczepiński|SIEM-24 Migracja logów do SQLite
+2026-07-05|Damian Szczepiński|SIEM-25 Migracja alertów do SQLite
+2026-07-05|Damian Szczepiński|SIEM-26 Odczyt logs i alerts z SQLite
+2026-07-06|Jakub Góral|SIEM-27 Test API po migracji SQLite
+2026-07-06|Damian Szczepiński|SIEM-28 Status i summary na SQLite
+2026-09-12|Julia Wasilewska|SIEM-29 Instalacja i konfiguracja Grafany
+2026-09-12|Julia Wasilewska|SIEM-30 Integracja SQLite z Grafaną
+2026-09-13|Julia Wasilewska|SIEM-31 Przeniesienie bazy do /var/lib/mini-siem
+2026-09-13|Julia Wasilewska|SIEM-32 Dashboard CPU RAM Disk
+2026-09-14|Julia Wasilewska|SIEM-33 Panele alertów i statusu hosta
+2026-09-14|Damian Szczepiński|SIEM-34 Usługa systemd backendu
+2026-09-14|Damian Szczepiński|SIEM-35 Usługa systemd agenta
+2026-09-15|Jakub Góral|SIEM-36 Test autostartu usług
+2026-09-15|Damian Szczepiński|SIEM-37 Cooldown alertów 60 s
+2026-09-15|Jakub Góral|SIEM-38 Test stress-ng i deduplikacji
+2026-09-16|Julia Wasilewska|SIEM-39 Zapytania SQL dla dashboardu
+2026-09-16|Jakub Góral|SIEM-40 Test restartu obu VM
+2026-09-16|Damian Szczepiński|SIEM-41 Backup i procedura odtworzenia
+2026-09-17|Jakub Góral|SIEM-42 Końcowa walidacja MVP i dokumentacja testów
+2026-09-17|Jakub Góral|SIEM-42 Dodanie ewidencji czasu i mapowania tasków

@@ -1,0 +1,43 @@
+task,date,assignee,hours,title
+SIEM-1,2026-05-09,Damian Szczepiński,2.0,Przygotowanie struktury projektu i środowiska
+SIEM-2,2026-05-09,Damian Szczepiński,2.5,Konfiguracja serwera Ubuntu i sieci
+SIEM-3,2026-05-09,Julia Wasilewska,3.0,Podstawowy backend Flask
+SIEM-4,2026-05-09,Julia Wasilewska,2.5,Endpoint POST /log
+SIEM-5,2026-05-09,Jakub Góral,2.0,Test POST /log i GET /logs
+SIEM-6,2026-05-10,Damian Szczepiński,3.5,Utworzenie agenta Linux
+SIEM-7,2026-05-10,Damian Szczepiński,2.5,Zbieranie CPU przez psutil
+SIEM-8,2026-05-10,Damian Szczepiński,2.5,Dodanie RAM i dysku
+SIEM-9,2026-05-10,Damian Szczepiński,3.0,Wysyłanie telemetrii HTTP JSON
+SIEM-10,2026-05-11,Jakub Góral,2.5,Test komunikacji agent-serwer
+SIEM-11,2026-05-16,Julia Wasilewska,3.5,Trwały zapis logs.jsonl
+SIEM-12,2026-05-16,Julia Wasilewska,3.0,Zapis alerts.jsonl
+SIEM-13,2026-05-17,Julia Wasilewska,3.0,Reguła HIGH_CPU
+SIEM-14,2026-05-17,Julia Wasilewska,2.5,Reguły HIGH_RAM i HIGH_DISK
+SIEM-15,2026-05-17,Jakub Góral,2.5,Test progów alertowych
+SIEM-16,2026-05-18,Julia Wasilewska,2.0,Endpoint GET /alerts
+SIEM-17,2026-06-05,Damian Szczepiński,4.0,Mechanizm ACTIVE/INACTIVE
+SIEM-18,2026-06-05,Damian Szczepiński,2.5,HOST_TIMEOUT_SECONDS = 30
+SIEM-19,2026-06-05,Damian Szczepiński,3.0,Endpoint GET /status
+SIEM-20,2026-06-05,Jakub Góral,2.5,Test ACTIVE -> INACTIVE -> ACTIVE
+SIEM-21,2026-06-06,Damian Szczepiński,3.5,Endpoint GET /summary
+SIEM-22,2026-06-06,Jakub Góral,2.0,Walidacja /summary i liczników
+SIEM-23,2026-07-04,Damian Szczepiński,3.0,Projekt schematu SQLite
+SIEM-24,2026-07-04,Damian Szczepiński,4.5,Migracja logów do SQLite
+SIEM-25,2026-07-05,Damian Szczepiński,4.0,Migracja alertów do SQLite
+SIEM-26,2026-07-05,Damian Szczepiński,3.0,Odczyt logs i alerts z SQLite
+SIEM-27,2026-07-06,Jakub Góral,3.0,Test API po migracji SQLite
+SIEM-28,2026-07-06,Damian Szczepiński,3.5,Status i summary na SQLite
+SIEM-29,2026-09-12,Julia Wasilewska,3.5,Instalacja i konfiguracja Grafany
+SIEM-30,2026-09-12,Julia Wasilewska,4.0,Integracja SQLite z Grafaną
+SIEM-31,2026-09-13,Julia Wasilewska,3.5,Przeniesienie bazy do /var/lib/mini-siem
+SIEM-32,2026-09-13,Julia Wasilewska,5.0,Dashboard CPU RAM Disk
+SIEM-33,2026-09-14,Julia Wasilewska,4.0,Panele alertów i statusu hosta
+SIEM-34,2026-09-14,Damian Szczepiński,3.5,Usługa systemd backendu
+SIEM-35,2026-09-14,Damian Szczepiński,3.0,Usługa systemd agenta
+SIEM-36,2026-09-15,Jakub Góral,2.5,Test autostartu usług
+SIEM-37,2026-09-15,Damian Szczepiński,4.0,Cooldown alertów 60 s
+SIEM-38,2026-09-15,Jakub Góral,3.0,Test stress-ng i deduplikacji
+SIEM-39,2026-09-16,Julia Wasilewska,3.0,Zapytania SQL dla dashboardu
+SIEM-40,2026-09-16,Jakub Góral,3.0,Test restartu obu VM
+SIEM-41,2026-09-16,Damian Szczepiński,3.5,Backup i procedura odtworzenia
+SIEM-42,2026-09-17,Jakub Góral,4.0,Końcowa walidacja MVP i dokumentacja testów
