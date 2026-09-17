@@ -1,16 +1,19 @@
 # mini-SIEM
 
-System centralnego monitorowania metryk hostów Linux. Repozytorium zawiera backend Flask, agenta, warstwę SQLite, konfigurację Grafany, usługi systemd i testy.
+System centralnego monitorowania i analizy zdarzeń rozwijany w ramach projektu inżynierskiego.
 
-## Przepływ
-`agent -> HTTP/JSON -> Flask -> storage/detection -> Grafana`
+## Przepływ danych
+`agent.py -> HTTP POST /log -> Flask -> SQLite -> reguły alertowe -> Grafana`
 
-## Historia zmian i taski
-Każdy commit zawiera identyfikator `SIEM-xx`, autora oraz `Time spent`. Szczegółowe zestawienie znajduje się w `docs/time-report.md` i `docs/tasks.csv`.
+Agent zbiera CPU, RAM i zajętość dysku. Backend dodaje centralny znacznik czasu, zapisuje telemetrię w SQLite, sprawdza progi CPU/RAM/dysk oraz ogranicza powtarzające się alerty cooldownem 60 s. `/status` klasyfikuje host jako ACTIVE/INACTIVE przy progu 30 s.
 
-Przydatne polecenia:
-```bash
-git log --date=short --pretty=format:"%h | %ad | %an | %s"
-git show <hash>
-git diff <starszy_commit>..<nowszy_commit>
-```
+## Katalogi
+- `agent/` – agent Linux
+- `server/` – Flask, SQLite i reguły alertowe
+- `grafana/` – zapytania dashboardu
+- `systemd/` – automatyczny start usług
+- `tests/` – scenariusze i testy
+- `docs/` – dokumentacja techniczna i ewidencja prac
+
+## Historia
+Historia Git pokazuje kolejne etapy implementacji i jest powiązana z identyfikatorami SIEM-xx oraz wpisami `Time spent`.
