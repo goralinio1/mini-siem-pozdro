@@ -1,6 +1,15 @@
 # Grafana
-Port 3000. Źródło danych: frser-sqlite-datasource.
+Datasource: `frser-sqlite-datasource`
+Database: `/var/lib/mini-siem/mini_siem.db`
+Mode: query only
 
-Datasource SQLite: `/var/lib/mini-siem/mini_siem.db`, tryb `query_only`.
+## Dashboard
+1. CPU Usage
+2. RAM Usage
+3. Disk Usage
+4. System Metrics History
+5. Recent Alerts
+6. Total Alerts
+7. Host Status
 
-Baza została przeniesiona poza `/home` z uwagi na `ProtectHome=yes`.
+Zapytania znajdują się w `queries.sql`.
