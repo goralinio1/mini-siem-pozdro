@@ -33,7 +33,9 @@ def receive_log():
     valid,error=validate_payload(data)
     if not valid: return jsonify({"status":"error","message":error}),400
     data["received_at"]=datetime.now().isoformat(); save_log(data)
-    return jsonify({"status":"ok"})
+    alerts = check_alerts(data)
+    for alert in alerts: save_alert(alert)
+    return jsonify({"status":"ok", "alerts_generated":len(alerts)})
 
 @app.get("/logs")
 def logs_endpoint(): return jsonify(rows("SELECT * FROM logs ORDER BY id ASC"))
